@@ -12,8 +12,6 @@ defined('DS') or define('DS', DIRECTORY_SEPARATOR);
 abstract class AbstractFactory
 {
 
-    protected static $application = "\\Nebula\\NebulaResponse\\{namespace}\\Application";
-
     /**
      * @param string $name
      * @param array $config
@@ -22,8 +20,13 @@ abstract class AbstractFactory
      */
     public static function make(string $name, array $config): ServiceContainer
     {
-        $namespace   = Kernel\Support\Str::studly($name);
-        $application = str_replace(['{namespace}'], [$namespace], self::$application);
+        $called_class               = get_called_class();
+        $namespaceAarry             = explode('\\', $called_class);
+        $count                      = count($namespaceAarry);
+        $namespace                  = Kernel\Support\Str::studly($name);
+        $namespaceAarry[$count - 1] = $namespace;
+        $namespaceAarry[$count]     = 'Application';
+        $application                = "\\" . implode('\\', $namespaceAarry);
         return new $application($config);
     }
 
