@@ -8,12 +8,11 @@ defined('DS') or define('DS', DIRECTORY_SEPARATOR);
 
 /**
  * Class Factory.
- *
- * @method static \Nebula\NebulaResponse\Parking\Application      Parking(array $config)
- * @method static \Nebula\NebulaResponse\Point\Application      Point(array $config)
  */
 abstract class AbstractFactory
 {
+
+    protected static $application = "\\Nebula\\NebulaResponse\\{namespace}\\Application";
 
     /**
      * @param string $name
@@ -24,7 +23,7 @@ abstract class AbstractFactory
     public static function make(string $name, array $config): ServiceContainer
     {
         $namespace   = Kernel\Support\Str::studly($name);
-        $application = "\\Nebula\\NebulaResponse\\{$namespace}\\Application";
+        $application = str_replace(['{namespace}'], [$namespace], self::$application);
         return new $application($config);
     }
 
