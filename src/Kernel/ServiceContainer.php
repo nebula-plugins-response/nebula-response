@@ -27,7 +27,7 @@ use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
- * Class ServiceContainer.
+ * Abstract Class ServiceContainer.
  *
  * @author v-sing <email1946367301@163.com>
  *
@@ -38,7 +38,7 @@ use Symfony\Component\HttpFoundation\Request;
  * @property Cache $cache
  * @property EventDispatcher $events
  */
-class ServiceContainer extends Container
+abstract class ServiceContainer extends Container
 {
     use WithAggregator;
 

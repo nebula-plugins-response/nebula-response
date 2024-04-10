@@ -15,7 +15,7 @@ namespace Nebula\NebulaResponse;
 
 use Nebula\NebulaResponse\Kernel\Delegation\DelegationOptions;
 
-class ParkingPlatform
+class NebulaResponse
 {
     /**
      * @var array

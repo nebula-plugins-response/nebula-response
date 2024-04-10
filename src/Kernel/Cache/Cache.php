@@ -12,7 +12,6 @@
 namespace Nebula\NebulaResponse\Kernel\Cache;
 
 
-use Nebula\NebulaResponse\Factory;
 use Nebula\NebulaResponse\Kernel\ServiceContainer;
 
 class Cache

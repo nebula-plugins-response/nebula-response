@@ -13,7 +13,7 @@ declare(strict_types=1);
 
 namespace Nebula\NebulaResponse\Kernel\Traits;
 
-use Nebula\NebulaResponse\ParkingPlatform;
+use Nebula\NebulaResponse\NebulaResponse;
 use Nebula\NebulaResponse\Kernel\BaseClient;
 use Nebula\NebulaResponse\Kernel\Delegation\DelegationTo;
 
@@ -24,7 +24,7 @@ trait WithAggregator
      */
     protected function aggregate()
     {
-        foreach (ParkingPlatform::config() as $key => $value) {
+        foreach (NebulaResponse::config() as $key => $value) {
             $this['config']->set($key, $value);
         }
     }

@@ -12,7 +12,7 @@ defined('DS') or define('DS', DIRECTORY_SEPARATOR);
  * @method static \Nebula\NebulaResponse\Parking\Application      Parking(array $config)
  * @method static \Nebula\NebulaResponse\Point\Application      Point(array $config)
  */
-class Factory
+abstract class AbstractFactory
 {
 
     /**

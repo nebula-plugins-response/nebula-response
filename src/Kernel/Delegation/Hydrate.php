@@ -13,7 +13,7 @@ declare(strict_types=1);
 
 namespace Nebula\NebulaResponse\Kernel\Delegation;
 
-use Nebula\NebulaResponse\Factory;
+//use Nebula\NebulaResponse\AbstractFactory;
 use Nebula\NebulaResponse\Kernel\Http\DelegationResponse;
 use Nebula\NebulaResponse\Kernel\ServiceContainer;
 
@@ -64,16 +64,16 @@ class Hydrate
         return new $application($this->buildConfig($this->attributes['config']));
     }
 
-    protected function createsOpenPlatformApplication($type)
-    {
-        $config = $this->attributes['config'];
-
-        $authorizerAppId = $config['app_id'];
-
-        $config['app_id'] = $config['component_app_id'];
-
-        return Factory::openPlatform($this->buildConfig($config))->$type($authorizerAppId, $config['refresh_token']);
-    }
+//    protected function createsOpenPlatformApplication($type)
+//    {
+//        $config = $this->attributes['config'];
+//
+//        $authorizerAppId = $config['app_id'];
+//
+//        $config['app_id'] = $config['component_app_id'];
+//
+//        return AbstractFactory::openPlatform($this->buildConfig($config))->$type($authorizerAppId, $config['refresh_token']);
+//    }
 
     protected function buildConfig(array $config)
     {

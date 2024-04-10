@@ -13,7 +13,7 @@ declare(strict_types=1);
 
 namespace Nebula\NebulaResponse\Kernel\Delegation;
 
-use Nebula\NebulaResponse\ParkingPlatform;
+use Nebula\NebulaResponse\NebulaResponse;
 
 class DelegationOptions
 {
@@ -73,7 +73,7 @@ class DelegationOptions
      */
     public function __destruct()
     {
-        ParkingPlatform::mergeConfig([
+        NebulaResponse::mergeConfig([
             'delegation' => $this->config,
         ]);
     }
