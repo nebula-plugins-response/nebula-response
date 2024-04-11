@@ -3,7 +3,7 @@
 /*
  * This file is part of the overtrue/wechat.
  *
- * (c) v-sing <email1946367301@163.com>
+ * (c) nebula <email1946367301@163.com>
  *
  * This source file is subject to the MIT license that is bundled
  * with this source code in the file LICENSE.
@@ -19,7 +19,7 @@ use Pimple\ServiceProviderInterface;
 /**
  * Class CacheServiceProvider.
  *
- * @author v-sing <email1946367301@163.com>
+ * @author nebula <email1946367301@163.com>
  */
 class CacheServiceProvider implements ServiceProviderInterface
 {
@@ -53,7 +53,7 @@ class CacheServiceProvider implements ServiceProviderInterface
                     // 驱动方式
                     'type'   => 'FILE',
                     // 缓存保存目录
-                    'path'   => \sys_get_temp_dir() . '/cache/parkingPlatform.log',
+                    'path'   => \sys_get_temp_dir() . '/cache',
                     // 缓存前缀
                     'prefix' => '',
                     // 缓存有效期 0表示永久缓存
@@ -66,7 +66,7 @@ class CacheServiceProvider implements ServiceProviderInterface
                 // 驱动方式
                 'type'   => $app['config']->get('cache.type') ?? 'FILE',
                 // 缓存保存目录
-                'path'   => $app['config']->get('cache.path') ?? \sys_get_temp_dir() . '/cache/parkingPlatform.log',
+                'path'   => $app['config']->get('cache.path') ?? \sys_get_temp_dir() . '/cache',
                 // 缓存前缀
                 'prefix' => $app['config']->get('cache.prefix') ?? '',
                 // 缓存有效期 0表示永久缓存

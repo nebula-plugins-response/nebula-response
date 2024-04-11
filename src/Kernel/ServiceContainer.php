@@ -3,7 +3,7 @@
 /*
  * This file is part of the overtrue/wechat.
  *
- * (c) v-sing <email1946367301@163.com>
+ * (c) nebula <email1946367301@163.com>
  *
  * This source file is subject to the MIT license that is bundled
  * with this source code in the file LICENSE.
@@ -29,7 +29,7 @@ use Symfony\Component\HttpFoundation\Request;
 /**
  * Abstract Class ServiceContainer.
  *
- * @author v-sing <email1946367301@163.com>
+ * @author nebula <email1946367301@163.com>
  *
  * @property Config $config
  * @property Request $request

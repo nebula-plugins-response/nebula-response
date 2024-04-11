@@ -3,7 +3,7 @@
 /*
  * This file is part of the overtrue/wechat.
  *
- * (c) v-sing <email1946367301@163.com>
+ * (c) nebula <email1946367301@163.com>
  *
  * This source file is subject to the MIT license that is bundled
  * with this source code in the file LICENSE.
@@ -18,7 +18,7 @@ use Pimple\ServiceProviderInterface;
 /**
  * Class LoggingServiceProvider.
  *
- * @author v-sing <email1946367301@163.com>
+ * @author nebula <email1946367301@163.com>
  */
 class LogServiceProvider implements ServiceProviderInterface
 {
@@ -68,7 +68,7 @@ class LogServiceProvider implements ServiceProviderInterface
                 'channels' => [
                     'single' => [
                         'driver' => 'single',
-                        'path'   => $app['config']->get('log.file') ?: \sys_get_temp_dir() . '/logs/parkingPlatform.log',
+                        'path'   => $app['config']->get('log.file') ?: \sys_get_temp_dir() . '/logs/nebulaResponse.log',
                         'level'  => $app['config']->get('log.level', 'debug'),
                     ],
                 ],

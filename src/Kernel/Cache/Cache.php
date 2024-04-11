@@ -66,7 +66,7 @@ class Cache
         }
         if (true === $name || !isset($this->instance[$name])) {
             $class = false === strpos($type, '\\') ?
-                '\\VSing\\ParkingPlatform\\Kernel\\Cache\\Driver\\' . ucwords($type) :
+                '\\Nebula\\NebulaResponse\\Kernel\\Cache\\Driver\\' . ucwords($type) :
                 $type;
             if (true === $name) {
                 return new $class($options);

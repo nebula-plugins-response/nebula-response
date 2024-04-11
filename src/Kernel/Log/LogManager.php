@@ -3,7 +3,7 @@
 /*
  * This file is part of the overtrue/wechat.
  *
- * (c) v-sing <email1946367301@163.com>
+ * (c) nebula <email1946367301@163.com>
  *
  * This source file is subject to the MIT license that is bundled
  * with this source code in the file LICENSE.
@@ -31,7 +31,7 @@ use Psr\Log\LoggerInterface;
 /**
  * Class LogManager.
  *
- * @author v-sing <email1946367301@163.com>
+ * @author nebula <email1946367301@163.com>
  */
 class LogManager implements LoggerInterface
 {
@@ -187,8 +187,8 @@ class LogManager implements LoggerInterface
      */
     protected function createEmergencyLogger()
     {
-        return new Monolog('ParkingPlatform', $this->prepareHandlers([new StreamHandler(
-            \sys_get_temp_dir() . '/parkingPlatform/parkingPlatform.log',
+        return new Monolog('NebulaResponse', $this->prepareHandlers([new StreamHandler(
+            \sys_get_temp_dir() . '/NebulaResponse/NebulaResponse.log',
             $this->level(['level' => 'debug'])
         )]));
     }
@@ -286,7 +286,7 @@ class LogManager implements LoggerInterface
             $this->prepareHandler(new SlackWebhookHandler(
                 $config['url'],
                 $config['channel'] ?? null,
-                $config['username'] ?? 'ParkingPlatform',
+                $config['username'] ?? 'NebulaResponse',
                 $config['attachment'] ?? true,
                 $config['emoji'] ?? ':boom:',
                 $config['short'] ?? false,
@@ -309,7 +309,7 @@ class LogManager implements LoggerInterface
     {
         return new Monolog($this->parseChannel($config), [
             $this->prepareHandler(new SyslogHandler(
-                'ParkingPlatform',
+                'NebulaResponse',
                 $config['facility'] ?? LOG_USER,
                 $this->level($config)
             ), $config),
@@ -392,7 +392,7 @@ class LogManager implements LoggerInterface
      */
     protected function parseChannel(array $config): string
     {
-        return $config['name'] ?? 'ParkingPlatform';
+        return $config['name'] ?? 'NebulaResponse';
     }
 
     /**
